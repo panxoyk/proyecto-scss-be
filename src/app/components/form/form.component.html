@@ -1,0 +1,53 @@
+<div class="content">
+    <h1> Ingresa tu domicilio </h1>
+    <form>
+        <div class="form-field">
+            <label for="region-form" class="form-field__label"> Región </label>
+            <select id="region-form" required class="form-field__input">
+                <option disabled selected> Selecciona una región </option>
+                <option value="region1"> Región 1 </option>
+                <option value="region2"> Región 2 </option>
+                <option value="region3"> Región 3 </option>
+            </select>
+        </div>
+        <div class="form-field">
+            <label for="comuna-form" class="form-field__label"> Comuna </label>
+            <select id="comuna-form" required class="form-field__input">
+                <option disabled selected> Selecciona una comuna </option>
+                <option value="comuna1"> Comuna 1 </option>
+                <option value="comuna2"> Comuna 2 </option>
+                <option value="comuna3"> Comuna 3 </option>
+            </select>
+        </div>
+        <div class="form-field">
+            <label for="población-form" class="form-field__label"> Villa, población o sector (opcional) </label>
+            <input id="población-form" type="text" placeholder="Ingresa villa, población o sector"
+                class="form-field__input">
+        </div>
+        <div class="form-field">
+            <label for="calle-form" class="form-field__label"> Avenida, calle o pasaje </label>
+            <input id="calle-form" type="text" placeholder="Ingresa avenida, calle o pasaje" required
+                class="form-field__input">
+        </div>
+        <div class="form-field">
+            <label for="numero-form" class="form-field__label"> Número </label>
+            <div class="form-field-number">
+                <input id="numero-form" type="number" placeholder="Ingresa número" required
+                    class="form-field-number__input">
+                <div class="form-field-nonumber">
+                    <input type="checkbox" name="no-numero" id="sin-numero-form" class="form-field-nonumber__input">
+                    <label for="sin-numero-form" class="form-field-nonumber__label"> Sin número </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-field">
+            <label for="dpto-form" class="form-field__label"> Casa o departamento (opcional) </label>
+            <input id="dpto-form" type="text" placeholder="Ingresa casa o departamento" class="form-field__input">
+        </div>
+        <div class="form-field">
+            <label for="block-form" class="form-field__label"> Block (opcional) </label>
+            <input id="block-form" type="text" placeholder="Ingresa block" class="form-field__input">
+        </div>
+        <ui-button [text]="'Continuar'" [disabled]="true" routerLink="/success" class="form__button"></ui-button>
+    </form>
+</div>

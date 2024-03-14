@@ -1,0 +1,38 @@
+<div class="content">
+    <div>
+        <div class="header">
+            <h1> Actualmente tu número celular registrado es +56 9 XXXX 8822 </h1>
+            <h2> ¿Deseas actualizar el celular? </h2>
+        </div>
+        <ng-container *ngIf="update">
+            <div class="body">
+                <div class="body__number-field">
+                    <label for="numcel" class="body__number-field__label"> Número de celular </label>
+                    <div class="body__number-field__input">
+                        <div class="body__number-field__input-prefix">
+                            +56
+                        </div>
+                        <input type="number" id="numcel" placeholder="Ej.: 9 1234 5678"
+                            class="body__number-field__input-field">
+                    </div>
+                </div>
+                <div class="body__number-field">
+                    <label for="confirm-numcel" class="body__number-field__label"> Confirma tu número de celular
+                    </label>
+                    <div class="body__number-field__input">
+                        <div class="body__number-field__input-prefix">
+                            +56
+                        </div>
+                        <input type="number" id="confirm-numcel" placeholder="Ej.: 9 1234 5678"
+                            class="body__number-field__input-field">
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="footer">
+        <ui-button [text]="'Actualizar'" [disabled]="update" (click)="updateNumber()"
+            class="button__primary"></ui-button>
+        <a routerLink="/form" class="footer__link"> No por ahora </a>
+    </div>
+</div>

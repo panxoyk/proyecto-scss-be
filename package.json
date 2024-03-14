@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "local": "ng serve --port 4800 --open --serve-path"
   },
   "private": true,
   "dependencies": {

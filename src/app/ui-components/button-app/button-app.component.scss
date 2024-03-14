@@ -1,0 +1,27 @@
+.button {
+    &__primary {
+        background-color: #3E50B4;
+        color: #FFFFFF;
+        box-shadow: 0px 2px 6px 0px #00000012;
+    }
+    &__accent {
+        background-color: #FFFFFF;
+        color: #3E50B4;
+        box-shadow: 0px 2px 6px 0px #00000012;
+    }
+}
+
+button {
+    width: 100%;
+    border-radius: 25px;
+    padding: 9px 16px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21.82px;
+    text-align: center;
+    &:disabled {
+        background-color: #D9DBE0;
+        color: #96989C;
+        box-shadow: 0px 2px 6px 0px #00000012;
+    }
+}
