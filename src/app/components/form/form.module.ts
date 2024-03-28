@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormRoutingModule } from './form-routing.module';
 import { FormComponent } from './form.component';
 import { ButtonAppModule } from 'src/app/ui-components/button-app/button-app.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ButtonAppModule } from 'src/app/ui-components/button-app/button-app.mod
   imports: [
     CommonModule,
     FormRoutingModule,
-    ButtonAppModule
+    ButtonAppModule,
+    ReactiveFormsModule
   ]
 })
 export class FormModule { }

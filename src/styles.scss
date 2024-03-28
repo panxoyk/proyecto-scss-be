@@ -65,6 +65,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 .content {
     padding: 24px;
-    height: 100vh;
     box-sizing: border-box;
+    height: 100vh;
+}
+
+app-login {
+    background-color: #3E50B4;
 }

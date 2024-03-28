@@ -5,14 +5,14 @@
             <h2> ¿Deseas actualizar el celular? </h2>
         </div>
         <ng-container *ngIf="update">
-            <div class="body">
+            <form [formGroup]="numberForm"  class="body">
                 <div class="body__number-field">
                     <label for="numcel" class="body__number-field__label"> Número de celular </label>
                     <div class="body__number-field__input">
                         <div class="body__number-field__input-prefix">
                             +56
                         </div>
-                        <input type="number" id="numcel" placeholder="Ej.: 9 1234 5678"
+                        <input formControlName="number" type="number" id="numcel" placeholder="Ej.: 9 1234 5678"
                             class="body__number-field__input-field">
                     </div>
                 </div>
@@ -23,16 +23,20 @@
                         <div class="body__number-field__input-prefix">
                             +56
                         </div>
-                        <input type="number" id="confirm-numcel" placeholder="Ej.: 9 1234 5678"
+                        <input formControlName="confirmNumber" type="number" id="confirm-numcel" placeholder="Ej.: 9 1234 5678"
                             class="body__number-field__input-field">
                     </div>
                 </div>
-            </div>
+            </form>
         </ng-container>
     </div>
     <div class="footer">
-        <ui-button [text]="'Actualizar'" [disabled]="update" (click)="updateNumber()"
-            class="button__primary"></ui-button>
+        <ng-container *ngIf="!update">
+            <button primary (click)="updateNumber()" class="footer__button"> Actualizar </button>
+        </ng-container>
+        <ng-container *ngIf="update">
+            <button primary (click)="submitForm()" [disabled]="numberForm.invalid" routerLink="/form" class="footer__button"> Actualizar </button>
+        </ng-container>
         <a routerLink="/form" class="footer__link"> No por ahora </a>
     </div>
 </div>

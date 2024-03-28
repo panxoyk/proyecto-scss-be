@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  noNumero: boolean = false
+
+  form: FormGroup = this.fb.group({
+    region: ['', Validators.required],
+    comuna: ['', Validators.required],
+    poblacion: ['', Validators.required],
+    calle: ['', Validators.required],
+    numero: ['', Validators.required],
+    dpto: ['', Validators.required],
+    block: ['', Validators.required]
+  })
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+  }
+
+  changeNoNumero(): void {
+    this.noNumero = !this.noNumero
   }
 
 }

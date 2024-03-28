@@ -1,18 +1,21 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonAppComponent } from './button-app.component';
+import { ButtonPrimaryComponent } from './button-primary.component';
+import { ButtonAccentComponent } from './button-accent.component';
 
 
 
 @NgModule({
   declarations: [
-    ButtonAppComponent
+    ButtonPrimaryComponent,
+    ButtonAccentComponent
   ],
   imports: [
     CommonModule,
   ],
   exports: [
-    ButtonAppComponent
+    ButtonPrimaryComponent,
+    ButtonAccentComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

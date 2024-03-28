@@ -1,10 +1,10 @@
 <div class="content">
     <h1> Ingresa tu domicilio </h1>
-    <form>
+    <form [formGroup]="form">
         <div class="form-field">
             <label for="region-form" class="form-field__label"> Región </label>
-            <select id="region-form" required class="form-field__input">
-                <option disabled selected> Selecciona una región </option>
+            <select id="region-form" required class="form-field__input" formControlName="region">
+                <option disabled [selected]="!form.controls['region'].value"> Selecciona una región </option>
                 <option value="region1"> Región 1 </option>
                 <option value="region2"> Región 2 </option>
                 <option value="region3"> Región 3 </option>
@@ -12,8 +12,8 @@
         </div>
         <div class="form-field">
             <label for="comuna-form" class="form-field__label"> Comuna </label>
-            <select id="comuna-form" required class="form-field__input">
-                <option disabled selected> Selecciona una comuna </option>
+            <select id="comuna-form" required class="form-field__input" formControlName="comuna">
+                <option disabled [selected]="!form.controls['comuna'].value"> Selecciona una comuna </option>
                 <option value="comuna1"> Comuna 1 </option>
                 <option value="comuna2"> Comuna 2 </option>
                 <option value="comuna3"> Comuna 3 </option>
@@ -22,32 +22,34 @@
         <div class="form-field">
             <label for="población-form" class="form-field__label"> Villa, población o sector (opcional) </label>
             <input id="población-form" type="text" placeholder="Ingresa villa, población o sector"
-                class="form-field__input">
+                class="form-field__input" formControlName="poblacion">
         </div>
         <div class="form-field">
             <label for="calle-form" class="form-field__label"> Avenida, calle o pasaje </label>
             <input id="calle-form" type="text" placeholder="Ingresa avenida, calle o pasaje" required
-                class="form-field__input">
+                class="form-field__input" formControlName="calle">
         </div>
         <div class="form-field">
             <label for="numero-form" class="form-field__label"> Número </label>
             <div class="form-field-number">
-                <input id="numero-form" type="number" placeholder="Ingresa número" required
-                    class="form-field-number__input">
+                <input id="numero-form" type="number" placeholder="Ingresa número"
+                    class="form-field-number__input" formControlName="numero" [disabled]="noNumero">
                 <div class="form-field-nonumber">
-                    <input type="checkbox" name="no-numero" id="sin-numero-form" class="form-field-nonumber__input">
+                    <input type="checkbox" name="no-numero" id="sin-numero-form" class="form-field-nonumber__input" [checked]="noNumero" (change)="changeNoNumero">
                     <label for="sin-numero-form" class="form-field-nonumber__label"> Sin número </label>
                 </div>
             </div>
         </div>
         <div class="form-field">
             <label for="dpto-form" class="form-field__label"> Casa o departamento (opcional) </label>
-            <input id="dpto-form" type="text" placeholder="Ingresa casa o departamento" class="form-field__input">
+            <input id="dpto-form" type="text" placeholder="Ingresa casa o departamento" class="form-field__input"
+                formControlName="dpto">
         </div>
         <div class="form-field">
             <label for="block-form" class="form-field__label"> Block (opcional) </label>
-            <input id="block-form" type="text" placeholder="Ingresa block" class="form-field__input">
+            <input id="block-form" type="text" placeholder="Ingresa block" class="form-field__input"
+                formControlName="block">
         </div>
-        <ui-button [text]="'Continuar'" [disabled]="true" routerLink="/success" class="form__button"></ui-button>
+        <button primary type="submit" routerLink="/success" class="form__button" [disabled]="form.invalid"> Continuar </button>
     </form>
 </div>
